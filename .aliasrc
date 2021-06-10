@@ -1,0 +1,6 @@
+#!/bin/sh
+# alias用設定
+
+
+alias ll="ls -la"
+

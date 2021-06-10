@@ -1,0 +1,8 @@
+#!/bin/sh
+# export用の設定
+
+# Golang用の設定
+export GOPATH=~/go
+export GOBIN=$GOPATH/bin 
+export PATH=$PATH:$GOBIN
+
