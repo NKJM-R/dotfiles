@@ -1,6 +1,8 @@
 #!/bin/sh
 # alias用設定
 
-
 alias ll="ls -la"
+
+alias vi=nvim
+alias vim=nvim
 

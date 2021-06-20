@@ -7,3 +7,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 export KEYBORD_TYPE="ASCII"
+
+# デフォルトのエディターを変更
+export EDITOR=nvim
