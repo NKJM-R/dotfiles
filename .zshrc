@@ -5,13 +5,16 @@
 #   # Linux用の設定
 # fi
 # neovimインストール
-source `pwd`/.neovimrc
+
+DIR=$(cd $(dirname $0); pwd)
+
+source ${DIR}/.neovimrc
 
 # export設定
-source `pwd`/.exportrc
+source ${DIR}/.exportrc
 
 # alias設定
-source `pwd`/.aliasrc
+source ${DIR}/.aliasrc
 
 bindkey '^f' forward-word
 bindkey '^b' backward-word
