@@ -1,6 +1,9 @@
 #!/bin/sh
 # export用の設定
 
+# プロンプトを変更
+export PS1='\t: \W$'
+
 # Golang用の設定
 export GOPATH=~/go
 export GOBIN=$GOPATH/bin 
