@@ -1,16 +1,15 @@
-bind -x ' "C-X": "ls -la" '
-# ctrl+fで次の単語に移動
-bind '"\C-f": forward-word'
-# ctrl+bで前の単語に移動
-bind '"\C-b": backward-word'
+DOTFILES=~/.config/dotfiles
 
-DIR=~/.config/dotfiles
-
-# source ${DIR}/.neovimrc
+# キーバインドをvimに変更する
+set -o vi
+bind -f ${DOTFILES}/.inputrc
 
 # export設定
-source ${DIR}/.exportrc
+source ${DOTFILES}/.exportrc
 
 # alias設定
-source ${DIR}/.aliasrc
+source ${DOTFILES}/.aliasrc
 
+# プロンプトを変更
+BRANCH='$(__git_ps1 "%s")'
+export PS1="\t $BRANCH \W $ "
