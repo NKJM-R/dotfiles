@@ -1,0 +1,19 @@
+window:
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 8
+    y: 4
+font:
+  normal:
+    family: "DroidSansMono Nerd Font"
+  size: 18.0
+  offset:
+    y: 1
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"

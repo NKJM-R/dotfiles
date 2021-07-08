@@ -1,7 +1,6 @@
 set completion-ignore-case on
 set show-all-if-unmodified on
 set colored-completion-prefix on
-set editing-mode vi
 set bell-style none
 
 # promptにモードを表示する
@@ -9,14 +8,25 @@ set show-mode-in-prompt on
 set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
 set vi-cmd-mode-string \1\e[31;1m\2(cmd) \1\e[0m\2
 
-"\C-a": beginning-of-line
-"\C-f": forward-char
-"\C-d": forward-backward-delete-char
-"\C-e": end-of-line
-"\C-b": backward-char
-"\C-h": backward-delete-char
-"\C-n": history-search-forward
-"\C-k": kill-line
-"\C-p": history-search-backward
-"\C-l": "clear\n"
+set editing-mode vi
+$if mode=vi
+  set keymap vi-command
+  Control-a: beginning-of-line
+  Control-w s: "tmux split-window -v" 
+  Control-o: "\C-b"
 
+  set keymap vi-insert
+  "\C-a": beginning-of-line
+  "\C-b": backward-char
+  "\C-d": forward-backward-delete-char
+  "\C-e": end-of-line
+  "\C-f": forward-char
+  "\C-h": backward-delete-char
+  "\C-k": kill-line
+  "\C-l": clear-screen
+  "\C-n": history-search-forward
+  "\C-p": history-search-backward
+
+$endif
+
+# "\ev": edit-and-execute-command

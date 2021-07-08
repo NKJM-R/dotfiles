@@ -1,7 +1,5 @@
 DOTFILES=~/.config/dotfiles
 
-# キーバインドをvimに変更する
-set -o vi
 bind -f ${DOTFILES}/.inputrc
 
 # export設定
