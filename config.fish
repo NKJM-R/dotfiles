@@ -13,7 +13,9 @@ if status is-interactive
   
   bind -M default -m default \csl tmux_session_list
   bind -M default -m default \css tmux_session_search
-  bind -M default -m default \csn tmux_session_new
+  bind -M default -m default \csp tmux_session_previous
+  bind -M default -m default \csn tmux_session_next
+  bind -M default -m default \csc tmux_session_create
 
   bind -M default -m default \cwv tmux_split_window_v
   bind -M default -m default \cws tmux_split_window_s
@@ -92,8 +94,16 @@ function tmux_session_search
   tmux list-sessions -F \"[##{session_windows}] ##S\" | fzf-tmux | sed 's/^\[[0-9]*\] //' | xargs tmux switch -t
 end
 
-function tmux_session_new
-  tmux detauch-client
-  read SESSION_NAME
-  tmux new -s $SESSION_NAME
+function tmux_session_create
+  tmux detach-client
+  tmux
 end
+
+function tmux_session_previous
+  tmux switch-client -p
+end
+
+function tmux_session_next
+  tmux switch-client -n
+end
+
