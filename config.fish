@@ -131,7 +131,7 @@ function tmux_pane_resize
 end
 
 function tmux_pane_resize_h
-  tmux resize-pane -R 1
+  tmux resize-pane -L 1
 end
 
 function tmux_pane_resize_j
@@ -143,7 +143,7 @@ function tmux_pane_resize_k
 end
 
 function tmux_pane_resize_l
-  tmux resize-pane -L 1
+  tmux resize-pane -R 1
 end
 
 function init_tmux_env_4k
