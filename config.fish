@@ -23,6 +23,12 @@ if status is-interactive
 
   bind -M default -m default \cwn tmux_window_next
   bind -M default -m default \cwp tmux_window_previous
+  bind -M default -m default \cw\cr tmux_pane_resize
+
+  bind -M default -m default \cweh tmux_pane_resize_h
+  bind -M default -m default \cwej tmux_pane_resize_j
+  bind -M default -m default \cwek tmux_pane_resize_k
+  bind -M default -m default \cwel tmux_pane_resize_l
 
   bind -M default -m default \cw\cv tmux_split_window_v
   bind -M default -m default \cw\cs tmux_split_window_s
@@ -107,3 +113,40 @@ function tmux_session_next
   tmux switch-client -n
 end
 
+function tmux_pane_resize
+  set fish_bind_mode insert;
+  while true;
+    read -p 'echo resize mode \>\ ' -s -n 1 input
+    switch $input
+      case h
+        tmux resize-pane -L 1
+      case j
+        tmux resize-pane -D 1
+      case k
+        tmux resize-pane -U 1
+      case l
+        tmux resize-pane -R 1
+      case 'q'
+        break
+      case '*'
+        echo 'resize mode exits is push to key [q]'
+    end
+  end;
+  set fish_bind_mode default;
+end
+
+function tmux_pane_resize_j
+  tmux resize-pane -D 1
+end
+
+function tmux_pane_resize_k
+  tmux resize-pane -U 1
+end
+
+function tmux_pane_resize_l
+  tmux resize-pane -L 1
+end
+
+function hello
+  echo hello
+end
