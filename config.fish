@@ -10,7 +10,7 @@ if status is-interactive
   bind -M insert \cl 'clear; commandline -f repaint'
   bind -M insert \cn history-search-forward
   bind -M insert \cp history-search-backward
-  
+
   bind -M default -m default \csl tmux_session_list
   bind -M default -m default \css tmux_session_search
   bind -M default -m default \csp tmux_session_previous
@@ -24,11 +24,6 @@ if status is-interactive
   bind -M default -m default \cwn tmux_window_next
   bind -M default -m default \cwp tmux_window_previous
   bind -M default -m default \cw\ce tmux_pane_resize
-
-  bind -M default -m default \cweh tmux_pane_resize_h
-  bind -M default -m default \cwej tmux_pane_resize_j
-  bind -M default -m default \cwek tmux_pane_resize_k
-  bind -M default -m default \cwel tmux_pane_resize_l
 
   bind -M default -m default \cw\cv tmux_split_window_v
   bind -M default -m default \cw\cs tmux_split_window_s
@@ -119,13 +114,13 @@ function tmux_pane_resize
     read -p 'echo resize mode \>\ ' -s -n 1 input
     switch $input
       case h
-        tmux resize-pane -L 1
+        tmux_pane_resize_h
       case j
-        tmux resize-pane -D 1
+        tmux_pane_resize_j
       case k
-        tmux resize-pane -U 1
+        tmux_pane_resize_k
       case l
-        tmux resize-pane -R 1
+        tmux_pane_resize_l
       case 'q'
         break
       case '*'
@@ -133,6 +128,10 @@ function tmux_pane_resize
     end
   end;
   set fish_bind_mode default;
+end
+
+function tmux_pane_resize_h
+  tmux resize-pane -R 1
 end
 
 function tmux_pane_resize_j
@@ -147,6 +146,16 @@ function tmux_pane_resize_l
   tmux resize-pane -L 1
 end
 
-function hello
-  echo hello
+function init_tmux_env_4k
+  tmux_split_window_v
+  tmux_split_window_v
+  tmux_split_window_s
+  tmux_split_window_s
+  tmux_select_pane_left
+  tmux_split_window_s
+  tmux_split_window_s
+  tmux_select_pane_left
+  tmux_split_window_s
+  tmux_split_window_s
 end
+
