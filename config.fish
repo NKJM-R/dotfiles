@@ -19,17 +19,17 @@ if status is-interactive
 
   bind -M default -m default \cwv tmux_split_window_v
   bind -M default -m default \cws tmux_split_window_s
-  bind -M default -m default \cwn tmux_new_window
+  bind -M default -m default \cwc tmux_window_create
 
-  bind -M default -m default \cwf tmux_next_window
-  bind -M default -m default \cwb tmux_back_window
+  bind -M default -m default \cwn tmux_window_next
+  bind -M default -m default \cwp tmux_window_previous
 
   bind -M default -m default \cw\cv tmux_split_window_v
   bind -M default -m default \cw\cs tmux_split_window_s
-  bind -M default -m default \cw\cn tmux_new_window
+  bind -M default -m default \cw\cc tmux_window_create
 
-  bind -M default -m default \cw\cf tmux_next_window
-  bind -M default -m default \cw\cb tmux_back_window
+  bind -M default -m default \cw\cf tmux_window_next
+  bind -M default -m default \cw\cb tmux_window_previous
 
   bind -M default -m default \cww tmux_select_pane_next
   bind -M default -m default \cwh tmux_select_pane_left
@@ -78,15 +78,15 @@ function tmux_split_window_v
   tmux split-window -h
 end
 
-function tmux_new_window
+function tmux_window_create
   tmux new-window
 end
 
-function tmux_next_window
+function tmux_window_next
   tmux select-window -t :+
 end
 
-function tmux_back_window
+function tmux_window_previous
   tmux select-window -t :-
 end
 
