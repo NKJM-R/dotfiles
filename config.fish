@@ -23,7 +23,7 @@ if status is-interactive
 
   bind -M default -m default \cwn tmux_window_next
   bind -M default -m default \cwp tmux_window_previous
-  bind -M default -m default \cw\cr tmux_pane_resize
+  bind -M default -m default \cw\ce tmux_pane_resize
 
   bind -M default -m default \cweh tmux_pane_resize_h
   bind -M default -m default \cwej tmux_pane_resize_j
