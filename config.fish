@@ -17,6 +17,17 @@ if status is-interactive
 
   bind -M default -m default \cwv tmux_split_window_v
   bind -M default -m default \cws tmux_split_window_s
+  bind -M default -m default \cwn tmux_new_window
+
+  bind -M default -m default \cwf tmux_next_window
+  bind -M default -m default \cwb tmux_back_window
+
+  bind -M default -m default \cw\cv tmux_split_window_v
+  bind -M default -m default \cw\cs tmux_split_window_s
+  bind -M default -m default \cw\cn tmux_new_window
+
+  bind -M default -m default \cw\cf tmux_next_window
+  bind -M default -m default \cw\cb tmux_back_window
 
   bind -M default -m default \cww tmux_select_pane_next
   bind -M default -m default \cwh tmux_select_pane_left
@@ -65,11 +76,24 @@ function tmux_split_window_v
   tmux split-window -h
 end
 
+function tmux_new_window
+  tmux new-window
+end
+
+function tmux_next_window
+  tmux select-window -t :+
+end
+
+function tmux_back_window
+  tmux select-window -t :-
+end
+
 function tmux_session_search
   tmux list-sessions -F \"[##{session_windows}] ##S\" | fzf-tmux | sed 's/^\[[0-9]*\] //' | xargs tmux switch -t
 end
 
 function tmux_session_new
+  tmux detauch-client
   read SESSION_NAME
   tmux new -s $SESSION_NAME
 end
