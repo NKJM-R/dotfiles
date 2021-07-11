@@ -1,5 +1,10 @@
+export LANG=ja_JP.UTF-8
+export EDITOR=nvim
 if status is-interactive
   fish_vi_key_bindings
+
+  bind -M insert \cs tmux_select_pane_next
+
   bind -M insert \ca beginning-of-line
   bind -M insert \cb backward-char
   bind -M insert \cd delete-or-exit
@@ -7,9 +12,14 @@ if status is-interactive
   bind -M insert \cf forward-char
   bind -M insert \ch backward-delete-char
   bind -M insert \ck kill-line
-  bind -M insert \cl 'clear; commandline -f repaint'
+  bind -M insert \cl screen_clear
   bind -M insert \cn history-search-forward
   bind -M insert \cp history-search-backward
+  bind -M insert \ct tmux_select_pane_next
+  bind -M insert \cr select-history
+
+  bind -M default \cl screen_clear
+  bind -M insert \cr select-history
 
   bind -M default -m default \csl tmux_session_list
   bind -M default -m default \css tmux_session_search
@@ -21,16 +31,13 @@ if status is-interactive
   bind -M default -m default \cws tmux_split_window_s
   bind -M default -m default \cwc tmux_window_create
 
-  bind -M default -m default \cwn tmux_window_next
-  bind -M default -m default \cwp tmux_window_previous
+  bind -M default -m default \cn tmux_window_next
+  bind -M default -m default \cp tmux_window_previous
   bind -M default -m default \cw\ce tmux_pane_resize
 
   bind -M default -m default \cw\cv tmux_split_window_v
   bind -M default -m default \cw\cs tmux_split_window_s
   bind -M default -m default \cw\cc tmux_window_create
-
-  bind -M default -m default \cw\cf tmux_window_next
-  bind -M default -m default \cw\cb tmux_window_previous
 
   bind -M default -m default \cww tmux_select_pane_next
   bind -M default -m default \cwh tmux_select_pane_left
@@ -46,6 +53,7 @@ if status is-interactive
 
   source ~/.config/dotfiles/.aliasrc 
 end
+
 
 function tmux_session_list
   tmux ls
@@ -115,12 +123,16 @@ function tmux_pane_resize
     switch $input
       case h
         tmux_pane_resize_h
+        screen_clear
       case j
         tmux_pane_resize_j
+        screen_clear
       case k
         tmux_pane_resize_k
+        screen_clear
       case l
         tmux_pane_resize_l
+        screen_clear
       case 'q'
         break
       case '*'
@@ -157,5 +169,15 @@ function init_tmux_env_4k
   tmux_select_pane_left
   tmux_split_window_s
   tmux_split_window_s
+  set fish_bind_mode default;
 end
 
+function screen_clear
+  clear; commandline -f repaint
+end
+
+function select-history 
+  history | fzf | xargs -o fish -c
+end
+
+source ~/.config/dotfiles/fish_functions.fish
