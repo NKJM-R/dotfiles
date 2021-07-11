@@ -1,5 +1,8 @@
 #!/bin/sh
 # export用の設定
+# 言語設定
+export LANG=ja_JP.UTF-8
+
 
 # Golang用の設定
 export GOPATH=~/go

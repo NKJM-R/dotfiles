@@ -3,6 +3,7 @@
 alias ll='ls -la'
 
 alias vi='nvim'
+alias mux=tmuxinator
 
 alias ..='cd ..'
 alias ..2='cd ../../'
