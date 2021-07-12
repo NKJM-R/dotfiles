@@ -139,6 +139,7 @@ function tmux_pane_resize
         echo 'resize mode exits is push to key [q]'
     end
   end;
+  screen_clear
   set fish_bind_mode default;
 end
 
@@ -177,7 +178,7 @@ function screen_clear
 end
 
 function select-history 
-  history | fzf | xargs -o fish -c
+  history | fzf | xargs -i cmd -o fish -c cmd
 end
 
 source ~/.config/dotfiles/fish_functions.fish
