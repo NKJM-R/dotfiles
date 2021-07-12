@@ -1,3 +1,35 @@
+# ----------------------------------------
+# カラー設定
+# ----------------------------------------
+# colors:
+#   primary:
+#     foreground: '#64526F'
+#     background: '#FAF7EE'
+#   cursor:
+#     cursor:     '#64526F'
+#     text:       '#FAF7EE'
+#   normal:
+#     black:      '#FAF7EE'
+#     red:        '#DF201C'
+#     green:      '#29A0AD'
+#     yellow:     '#DB742E'
+#     blue:       '#3980C2'
+#     magenta:    '#2C9473'
+#     cyan:       '#6B3062'
+#     white:      '#64526F'
+#   bright:
+#     black:      '#9F93A1'
+#     red:        '#DF201C'
+#     green:      '#29A0AD'
+#     yellow:     '#DB742E'
+#     blue:       '#3980C2'
+#     magenta:    '#2C9473'
+#     cyan:       '#6B3062'
+#     white:      '#64526F'
+
+# ----------------------------------------
+# window設定
+# ----------------------------------------
 window:
   position:
     x: 0
@@ -11,9 +43,15 @@ font:
   size: 18.0
   offset:
     y: 1
+background_opacity: 0.95
+
+# ----------------------------------------
+# shell設定
+# ----------------------------------------
 shell:
   program: /usr/local/bin/fish
   args:
     - -l
-    - -c
-    - "tmux attach || tmux"
+
+      # key_bindings:
+      #   - { key: X,     mods: Shift,     chars: "\x01\x65" }
