@@ -39,6 +39,8 @@ if status is-interactive
   bind -M default -m default \cw\cs tmux_split_window_s
   bind -M default -m default \cw\cc tmux_window_create
 
+  bind -M default -m default \cw\ca\ca tmux_select_all
+  bind -M default -m default \cw\ca\ce tmux_select_end
   bind -M default -m default \cww tmux_select_pane_next
   bind -M default -m default \cwh tmux_select_pane_left
   bind -M default -m default \cwj tmux_select_pane_down
@@ -57,6 +59,14 @@ end
 
 function tmux_session_list
   tmux ls
+end
+
+function tmux_select_all
+  tmux set-window-option synchronize-panes on
+end
+
+function tmux_select_end
+  tmux set-window-option synchronize-panes off
 end
 
 function tmux_select_pane_next
@@ -178,7 +188,7 @@ function screen_clear
 end
 
 function select-history 
-  history | fzf | xargs -i cmd -o fish -c cmd
+  history | fzf | xargs -o fish -c 
 end
 
 source ~/.config/dotfiles/fish_functions.fish
