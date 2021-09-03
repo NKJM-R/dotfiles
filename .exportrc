@@ -13,3 +13,4 @@ export KEYBORD_TYPE="ASCII"
 
 # デフォルトのエディターを変更
 export EDITOR=nvim
+export TMUXINATOR_CONFIG=~/.config/dotfiles/tmuxinator

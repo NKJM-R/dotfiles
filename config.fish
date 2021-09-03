@@ -1,5 +1,6 @@
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
+export TMUXINATOR_CONFIG=~/.config/dotfiles/tmuxinator
 if status is-interactive
   fish_vi_key_bindings
 
