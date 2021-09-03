@@ -1,0 +1,16 @@
+name: project
+root: ~/Desktop
+
+windows:
+  - main:
+      layout: b8fd,120x34,0,0,0
+      panes:
+        - clear
+  - sub:
+      layout: b8fd,120x34,0,0,0
+      panes:
+        - clear
+  - other:
+      layout: b8fd,120x34,0,0,0
+      panes:
+        - clear
