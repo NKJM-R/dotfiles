@@ -1,8 +1,10 @@
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
-export TMUXINATOR_CONFIG=~/.config/dotfiles/tmuxinator
 if status is-interactive
+  eval (gh completion -s fish| source)
   fish_vi_key_bindings
+  echo $PATH
+  set PATH /Users/ryota-nakajima/.nodebrew/node/v16.8.0/bin $PATH
 
   bind -M insert \cs tmux_select_pane_next
 
@@ -193,3 +195,4 @@ function select-history
 end
 
 source ~/.config/dotfiles/fish_functions.fish
+set PATH /Users/ryota-nakajima/.nodebrew/node/v16.8.0/bin $PATH
