@@ -9,3 +9,8 @@ cat "${DOTFILES}/.tmux.conf" > ~/.tmux.conf
 
 # alacritty
 # cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
+
+# tmuxinator
+mkdir ~/.config/tmuxinator
+cp tmuxinator/* ~/.config/tmuxinator/.
+
