@@ -8,4 +8,4 @@ echo "source ${DOTFILES}/config.fish" > ~/.config/fish/config.fish
 cat "${DOTFILES}/.tmux.conf" > ~/.tmux.conf
 
 # alacritty
-cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
+# cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
