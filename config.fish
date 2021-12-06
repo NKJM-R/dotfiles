@@ -196,3 +196,4 @@ end
 
 source ~/.config/dotfiles/fish_functions.fish
 set PATH /Users/ryota-nakajima/.nodebrew/node/v16.8.0/bin $PATH
+starship init fish | source
