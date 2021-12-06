@@ -5,7 +5,7 @@ DOTFILES="${HOME}/.config/dotfiles"
 echo "source ${DOTFILES}/config.fish" > ~/.config/fish/config.fish
 
 # tmux
-cat "${DOTFILES}/.tmux.conf" > ~/.tmux.conf
+cat "${DOTFILES}/tmux.conf" > ~/.tmux.conf
 
 # alacritty
 # cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
