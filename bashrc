@@ -11,3 +11,4 @@ source ${DOTFILES}/.aliasrc
 # プロンプトを変更
 BRANCH='$(__git_ps1 "%s")'
 export PS1="\t $BRANCH \W $ "
+eval "$(starship init bash)"

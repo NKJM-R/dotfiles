@@ -4,6 +4,12 @@ DOTFILES="${HOME}/.config/dotfiles"
 # fish
 echo "source ${DOTFILES}/config.fish" > ~/.config/fish/config.fish
 
+# zsh
+cat "${DOTFILES}/bashrc" > ~/.bashrc
+
+# zsh
+cat "${DOTFILES}/zshrc" > ~/.zshrc
+
 # tmux
 cat "${DOTFILES}/tmux.conf" > ~/.tmux.conf
 
