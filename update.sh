@@ -1,5 +1,5 @@
 # !/bin/bash
-DOTFILES="${HOME}/.config/dotfiles"
+export DOTFILES="${HOME}/.config/dotfiles"
 
 # fish
 echo "source ${DOTFILES}/config.fish" > ~/.config/fish/config.fish
@@ -14,7 +14,8 @@ cat "${DOTFILES}/zshrc" > ~/.zshrc
 cat "${DOTFILES}/tmux.conf" > ~/.tmux.conf
 
 # alacritty
-# cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
+mkdir ~/.config/alacritty
+cat "${DOTFILES}/alacritty.yml" > ~/.config/alacritty/alacritty.yml
 
 # tmuxinator
 mkdir ~/.config/tmuxinator
