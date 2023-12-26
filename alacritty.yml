@@ -30,26 +30,26 @@
 # ----------------------------------------
 # window設定
 # ----------------------------------------
-window:
-  position:
-    x: 0
-    y: 0
-  padding:
-    x: 8
-    y: 4
-font:
-  normal:
-    family: "DroidSansMono Nerd Font"
-  size: 18.0
-  offset:
-    y: 1
-background_opacity: 0.95
+# window:
+#   position:
+#     x: 0
+#     y: 0
+#   padding:
+#     x: 8
+#     y: 4
+# font:
+#   normal:
+#     family: "DroidSansMono Nerd Font"
+#   size: 18.0
+#   offset:
+#     y: 1
+# background_opacity: 0.95
 
 # ----------------------------------------
 # shell設定
 # ----------------------------------------
 shell:
-  program: /usr/local/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - -l
 
