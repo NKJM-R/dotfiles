@@ -52,6 +52,8 @@ shell:
   program: /opt/homebrew/bin/fish
   args:
     - -l
+    - -c
+    - "tmux a -t 0 || tmux"
 
       # key_bindings:
       #   - { key: X,     mods: Shift,     chars: "\x01\x65" }
