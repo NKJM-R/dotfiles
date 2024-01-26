@@ -30,20 +30,21 @@
 # ----------------------------------------
 # window設定
 # ----------------------------------------
-# window:
-#   position:
-#     x: 0
-#     y: 0
-#   padding:
-#     x: 8
-#     y: 4
+window:
+  # 透過率の設定
+  opacity: 0.95
+# position:
+#   x: 0
+#   y: 0
+# padding:
+#   x: 8
+#   y: 4
 # font:
 #   normal:
 #     family: "DroidSansMono Nerd Font"
 #   size: 18.0
 #   offset:
 #     y: 1
-# background_opacity: 0.95
 
 # ----------------------------------------
 # shell設定
