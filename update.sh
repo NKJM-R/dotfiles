@@ -26,7 +26,7 @@ for arg in "$@"; do
             ;;
         tmux)
             echo "Updating tmux configuration..."
-            cat "${DOTILES}/tmux.conf" > ~/.tmux.conf
+            cat "${DOTFILES}/tmux.conf" > ~/.tmux.conf
             ;;
         alacritty)
             echo "Updating alacritty configuration..."
