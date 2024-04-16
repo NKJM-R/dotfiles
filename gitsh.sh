@@ -1,4 +1,4 @@
-git filter-branch --env-filter '
+git filter-branch --force  --env-filter '
 OLD_EMAIL="nakajima.ryota.eg74@members.co.jp"
 CORRECT_NAME="NKJM-R"
 CORRECT_EMAIL="nakajima.ryota28jp@gmail.com"
